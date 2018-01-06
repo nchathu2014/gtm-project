@@ -3,6 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>GTL Session</title>
+    <script src="gtm-service.js"></script>
+    <script>
+        GTMService("GTM-PL6MWGR","myDataLayer");
+        myDataLayer=[];
+        myDataLayer.push({
+            "test":"test value"
+        })
+    </script>
+
 </head>
 <body>
 <h1>Hi from GTM</h1>
