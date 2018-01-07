@@ -3,16 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <title>GTL Session</title>
-    <script src="test.js"></script>
+    <script src="test_copy.js"></script>
     <script>
-        GTMService.createContainer('GTM-PL6MWGR','myDataLayer');
-        GTMService.pushToDataLayer({
-            "test":"12322111"
-        },'myDataLayer')
+
+       var c1 = new GTMService();
+       c1.createContainer('GTM-PL6MWGR','myDataLayer1');
+
+        var c2 = new GTMService();
+        c2.createContainer('GTM-NHZNVWD','myDataLayer2');
+
+
+
+      /* c2.pushToDataLayer('myDataLayer2',{
+           "event":"Logger"
+       })
+*/
+
+
+       /* GTMService.createContainer('GTM-PL6MWGR','myDataLayer')
+        GTMService.pushToDataLayer('myDataLayer',{
+            "test":123456
+        })*/
+
+
+    </script>
+
+    <script>
+        function handleOnClick(){
+
+            var dataObject = {
+                'event': 'pressed_credits',
+                'category': 'click',
+                'action':'handleOnClick()',
+                'label': 'label_pressed_credits'
+            };
+
+            c1.pushToDataLayer('myDataLayer1',dataObject);
+            console.log("handleOnClick");
+
+        }
     </script>
 
 </head>
 <body>
 <h1>Hi from GTM</h1>
+<button onclick="handleOnClick()">Click me</button>
 </body>
 </html>
