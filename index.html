@@ -31,14 +31,16 @@
     <script>
         function handleOnClick(){
 
-            var dataObject = {
-                'event': 'pressed_credits',
+           /* var dataObject = {
+                'event': 'TEST_EVENT',
                 'category': 'click',
                 'action':'handleOnClick()',
                 'label': 'label_pressed_credits'
-            };
+            };*/
 
-            c1.pushToDataLayer('myDataLayer1',dataObject);
+            var dataObj = c1.createDataObject('TEST_EVENT1','click','handleOnClick','label_pressed_credits');
+
+            c1.pushToDataLayer('myDataLayer1',dataObj);
             console.log("handleOnClick");
 
         }

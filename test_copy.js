@@ -15,21 +15,58 @@ function GTMService(){
         window[dl].push(dataObj)
     }
 
+    function __createDataObject(event,category,action,label){
+        let dataObject={};
+        dataObject.event = event;
+        dataObject.category = category;
+        dataObject.action = action;
+        dataObject.label = label;
+
+        return dataObject;
+    }
+
     return{
         createContainer:__initContainer,
-        pushToDataLayer:__pushToDataLayer
+        pushToDataLayer:__pushToDataLayer,
+        createDataObject:__createDataObject
     }
 
 
 
 };
 
-//For Single GTM Container Application
+// ================== For Single GTM Container Application ====================================
+/**
+ * create container
+ * @param tag
+ * @param dl
+ * @returns {*}
+ */
 GTMService.createContainer = function(tag,dl='dataLayer'){
     return new GTMService().createContainer(tag,dl)
 };
 
-
+/**
+ * push to data layer
+ * @param dl
+ * @param dataObj
+ */
 GTMService.pushToDataLayer = function(dl='dataLayer',dataObj){
     window[dl].push(dataObj);
+};
+/**
+ * create data object
+ * @param event
+ * @param category
+ * @param action
+ * @param label
+ * @returns {{}}
+ */
+GTMService.createDataObject = function(event,category,action,label){
+    let dataObject={};
+    dataObject.event = event;
+    dataObject.category = category;
+    dataObject.action = action;
+    dataObject.label = label;
+    return dataObject;
 };
