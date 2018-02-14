@@ -6,10 +6,10 @@
     <script src="test_copy.js"></script>
     <script>
 
-       var c1 = new GTMService();
+       let c1 = new GTMService();
        c1.createContainer('GTM-PL6MWGR','myDataLayer1');
 
-        var c2 = new GTMService();
+        let c2 = new GTMService();
         c2.createContainer('GTM-NHZNVWD','myDataLayer2');
 
 
@@ -38,7 +38,18 @@
                 'label': 'label_pressed_credits'
             };*/
 
-            var dataObj = c1.createDataObject('TEST_EVENT1','click','handleOnClick','label_pressed_credits');
+           /*
+
+           * event,
+           * category,
+           * error_code,
+           * component_name,
+           * action_name,
+           *
+           * */
+            //event,category,component_name,error_code,error_desc,action_name
+
+            let dataObj = c1.createDataObject('JS_ERROR_EVT','click','Assignment Builder',500,'Error Description','handleOnClick()');
 
             c1.pushToDataLayer('myDataLayer1',dataObj);
             console.log("handleOnClick");
