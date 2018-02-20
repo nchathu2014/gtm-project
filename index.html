@@ -6,10 +6,10 @@
     <script src="test_copy.js"></script>
     <script>
 
-       let c1 = new GTMService();
+       let c1 = new LAUILogger();
        c1.createContainer('GTM-PL6MWGR','myDataLayer1');
 
-        let c2 = new GTMService();
+        let c2 = new LAUILogger();
         c2.createContainer('GTM-NHZNVWD','myDataLayer2');
 
 
@@ -49,9 +49,10 @@
            * */
             //event,category,component_name,error_code,error_desc,action_name
 
-            let dataObj = c1.createDataObject('JS_ERROR_EVT','click','Assignment Builder',500,'Error Description','handleOnClick()');
+            let dataObj = c1.createDataObject('JS_ERROR_EVT','MSNG','click','Assignment Builder',500,'Error Description','handleOnClick()','section id','assignment id','Instructor','REVEL','timestamp');
+            console.log(dataObj);
 
-            c1.pushToDataLayer('myDataLayer1',dataObj);
+            c1.pushError('myDataLayer1',dataObj);
             console.log("handleOnClick");
 
         }
@@ -62,4 +63,3 @@
 <h1>Hi from GTM</h1>
 <button onclick="handleOnClick()">Click me</button>
 </body>
-</html>

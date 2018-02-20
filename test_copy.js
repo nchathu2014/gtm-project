@@ -1,4 +1,4 @@
-function GTMService(){
+function LAUILogger(){
 
     /**
      * Initiate the GTM container
@@ -36,13 +36,13 @@ function GTMService(){
      * @param action_name
      * @private
      */
-    function __createDataObject(event,category,component_name,error_code,error_desc,action_name){
-        return configureGTMDataObject(event,category,component_name,error_code,error_desc,action_name);
+    function __createDataObject(event,event_src,category,component_name,error_code,error_desc,action_name,section_id,assignment_id,user,env,timestamp){
+        return configureGTMDataObject(event,event_src,category,component_name,error_code,error_desc,action_name,section_id,assignment_id,user,env,timestamp);
     }
 
     return{
         createContainer:__initContainer,
-        pushToDataLayer:__pushToDataLayer,
+        pushError:__pushToDataLayer,
         createDataObject:__createDataObject
     }
 };
@@ -59,14 +59,20 @@ function GTMService(){
  * @param action_name
  * @returns {{}}
  */
-function configureGTMDataObject(event,category,component_name,error_code,error_desc,action_name){
+function configureGTMDataObject(event,event_src,category,component_name,error_code,error_desc,action_name,section_id='NULL',assignment_id='NULL',user='NULL',env='NULL',timestamp){
     let dataObject={};
     dataObject['event'] = event;
+    dataObject['event_src'] = event_src;
     dataObject['category'] = category;
     dataObject['component_name'] = component_name;
+    dataObject['section_id'] = section_id;
     dataObject['error_code'] = error_code;
     dataObject['error_desc'] = error_desc;
     dataObject['action_name'] = action_name;
+    dataObject['assignment_id'] = assignment_id;
+    dataObject['user'] = user;
+    dataObject['env'] = env;
+    dataObject['timestamp'] = timestamp;
     return dataObject;
 }
 
@@ -77,7 +83,7 @@ function configureGTMDataObject(event,category,component_name,error_code,error_d
  * @param dl
  * @returns {*}
  */
-GTMService.createContainer = function(tag,dl='dataLayer'){
+LAUILogger.createContainer = function(tag,dl='dataLayer'){
     return new GTMService().createContainer(tag,dl)
 };
 
@@ -86,7 +92,7 @@ GTMService.createContainer = function(tag,dl='dataLayer'){
  * @param dl
  * @param dataObj
  */
-GTMService.pushToDataLayer = function(dl='dataLayer',dataObj){
+LAUILogger.pushError = function(dl='dataLayer',dataObj){
     window[dl].push(dataObj);
 };
 
@@ -99,6 +105,6 @@ GTMService.pushToDataLayer = function(dl='dataLayer',dataObj){
  * @param error_desc
  * @param action_name
  */
-GTMService.createDataObject = function(event,category,component_name,error_code,error_desc,action_name){
-    return configureGTMDataObject(event,category,component_name,error_code,error_desc,action_name);
-};
+LAUILogger.createDataObject = function(event,event_src,category,component_name,error_code,error_desc,action_name,section_id='NULL',assignment_id='NULL',user='NULL',env='NULL',timestamp) {
+    return configureGTMDataObject(event, event_src, category, component_name, error_code, error_desc, action_name, section_id, assignment_id, user, env, timestamp);
+}
