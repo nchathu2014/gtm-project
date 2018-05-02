@@ -107,4 +107,4 @@ LAUILogger.pushError = function(dl='dataLayer',dataObj){
  */
 LAUILogger.createDataObject = function(event,event_src,category,component_name,error_code,error_desc,action_name,section_id='NULL',assignment_id='NULL',user='NULL',env='NULL',timestamp) {
     return configureGTMDataObject(event, event_src, category, component_name, error_code, error_desc, action_name, section_id, assignment_id, user, env, timestamp);
-}
+};
