@@ -17,6 +17,7 @@ yarn-error.log
 /src/testing/npm-debug.log
 /src/microservices/npm-debug.log
 /src/websockets/npm-debug.log
+dist
 
 # example
 /quick-start
