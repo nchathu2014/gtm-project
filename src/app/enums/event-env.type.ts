@@ -6,7 +6,7 @@
  * @export
  * @enum {number}
  */
-export enum EventEnvEnum {
+export enum EventEnvType {
   DEV = 'DEV',
   CERT = 'CERT',
   STG = 'STG',

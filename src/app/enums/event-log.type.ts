@@ -4,7 +4,7 @@
  * @export
  * @enum {number}
  */
-export enum EventLogEnum {
+export enum EventLogType {
   INFO = 'INFO',
   WARNING = 'WARNING',
   ERROR = 'ERROR',

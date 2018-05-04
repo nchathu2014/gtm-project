@@ -1,5 +1,5 @@
-import { EventLogEnum } from '@app/enums/event-log.enum';
-import { EventEnvEnum } from '@app/enums/event-env.enum';
+import { EventLogType } from '@app/enums/event-log.type';
+import { EventEnvType } from '@app/enums/event-env.type';
 
 /**
  * Main interface for the data layer
@@ -18,10 +18,10 @@ export interface EventInterface {
   event_timestamp: string;
 
   // type of event, e.g. error, warning, info
-  event_log?: EventLogEnum;
+  event_log?: EventLogType;
 
   // event environment e.g. prod/stg etc...
-  event_env?: EventEnvEnum;
+  event_env?: EventEnvType;
 
   // the component in which the event is triggered, e.g. rubric component 😋
   component?: string;

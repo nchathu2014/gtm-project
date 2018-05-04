@@ -1,5 +1,5 @@
 import { XhrErrorDataLayerInterface } from '@app/xhr-error/interfaces/xhr-error-data-layer.interface';
-import { EventLogEnum } from '@app/enums/event-log.enum';
+import { EventLogType } from '@app/enums/event-log.type';
 import { UserTimestampUtil } from '@app/utils/user-timestamp/user-timestamp.util';
 
 /**
@@ -17,7 +17,7 @@ export class XhrError {
    * @memberof XhrError
    */
   static xhrErrorLog(pushParams: XhrErrorDataLayerInterface): void {
-    pushParams.event_log = EventLogEnum.ERROR;
+    pushParams.event_log = EventLogType.ERROR;
     pushParams.event_timestamp = UserTimestampUtil();
     (window as any).dataLayer.push(pushParams);
   }

@@ -1,8 +1,8 @@
 import { WatchJsArgsInterface } from '@app/js-error/interfaces/watch-js-args.interface';
 import { WatchJsDataLayerErrorsInterface } from '@app/js-error/interfaces/watch-js-data-layer-errors.interface';
 import { UserTimestampUtil } from '@app/utils/user-timestamp/user-timestamp.util';
-import { EventLogEnum } from '@app/enums/event-log.enum';
-import { EventCategoryEnum } from '@app/enums/event-category.enum';
+import { EventLogType } from '@app/enums/event-log.type';
+import { EventCategoryType } from '@app/enums/event-category.type';
 import { ErrorJsDataLayerInterface } from '@app/js-error/interfaces/error-js-data-layer.interface';
 import { SanitizeStackErrorUtil } from '@app/utils/sanitize-string/to-string.util';
 
@@ -17,8 +17,8 @@ export class JsErrors {
   static watchJSErrors(pushParams: WatchJsArgsInterface): void {
     window.onerror = (msg, url, line, col, error) => {
       const constructDataPush: WatchJsDataLayerErrorsInterface = {
-        event: EventCategoryEnum.JS_ERROR_WATCH,
-        event_log: EventLogEnum.ERROR,
+        event: EventCategoryType.JS_ERROR_WATCH,
+        event_log: EventLogType.ERROR,
         event_source: url,
         error_js_watch_line: line,
         error_js_watch_message: msg.toString(),
