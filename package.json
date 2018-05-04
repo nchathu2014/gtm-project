@@ -12,7 +12,8 @@
     "test:coverage": "cross-env NODE_ENV=test jest --coverage",
     "commit": "git-cz",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
-    "commitmsg": "commitlint -e $GIT_PARAMS"
+    "commitmsg": "commitlint -e $GIT_PARAMS",
+    "doc": "typedoc --readme readme --target es5 --out ./docs ./src --exclude {**/*.spec.ts}"
   },
   "repository": {
     "type": "git",
@@ -50,6 +51,7 @@
     "ts-node": "^6.0.2",
     "tsconfig-paths": "^3.3.1",
     "tslint": "^5.9.1",
+    "typedoc": "^0.11.1",
     "typescript": "^2.8.3"
   },
   "jest": {
