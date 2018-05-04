@@ -1,4 +1,4 @@
-import { EventInterface } from '@app/interfaces/event.interface';
+import { EventInterface } from '../../interfaces/event.interface';
 
 export interface XhrErrorDataLayerInterface extends EventInterface {
   error_xhr_message: string;

@@ -12,14 +12,14 @@ export default {
   input: './src/index.ts',
   output: [
     {
-      file: `dist/${pjson.name}.js`,
+      file: `dist/${pjson.name}.browser.js`,
       format: 'iife',
       name: 'lagtm',
       moduleName: 'lagtm',
       sourcemap: isEnvDev ? 'inline' : false,
     },
     {
-      file: `dist/${pjson.name}.umd.js`,
+      file: `dist/index.js`,
       format: 'umd',
       name: 'lagtm',
       moduleName: 'lagtm',
@@ -37,9 +37,9 @@ export default {
       },
     }),
     typescript({
-      tsconfigDefaults: { compilerOptions: { declaration: true } },
       tsconfig: 'tsconfig.json',
-      tsconfigOverride: { compilerOptions: { declaration: false } },
+      clean: true,
+      exclude: ['*.d.ts', '**/*.d.ts', '*.spec.ts', '**/*.spec.ts'],
     }),
     clear({
       targets: ['./dist'],
@@ -48,7 +48,6 @@ export default {
     (isEnvDev ? false : uglify()),
     (isEnvDev ? html({
       template: 'src/index.html',
-      inject: 'head',
     }) : false),
     (isEnvDev ? browsersync({
       server: 'dist',

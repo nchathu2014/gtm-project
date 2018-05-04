@@ -1,10 +1,10 @@
-import { WatchJsArgsInterface } from '@app/js-error/interfaces/watch-js-args.interface';
-import { WatchJsDataLayerErrorsInterface } from '@app/js-error/interfaces/watch-js-data-layer-errors.interface';
-import { UserTimestampUtil } from '@app/utils/user-timestamp/user-timestamp.util';
-import { EventLogType } from '@app/enums/event-log.type';
-import { EventCategoryType } from '@app/enums/event-category.type';
-import { ErrorJsDataLayerInterface } from '@app/js-error/interfaces/error-js-data-layer.interface';
-import { SanitizeStackErrorUtil } from '@app/utils/sanitize-string/to-string.util';
+import { WatchJsArgsInterface } from './interfaces/watch-js-args.interface';
+import { WatchJsDataLayerErrorsInterface } from './interfaces/watch-js-data-layer-errors.interface';
+import { EventLogType } from '../enums/event-log.type';
+import { SanitizeStackErrorUtil } from '../utils/sanitize-string/to-string.util';
+import { UserTimestampUtil } from '../utils/user-timestamp/user-timestamp.util';
+import { EventCategoryType } from '../enums/event-category.type';
+import { ErrorJsDataLayerInterface } from './interfaces/error-js-data-layer.interface';
 
 export class JsErrors {
   /**

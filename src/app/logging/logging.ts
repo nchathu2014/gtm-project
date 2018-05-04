@@ -1,5 +1,5 @@
-import { LoggingDataLayerInterface } from '@app/logging/interfaces/logging-data-layer.interface';
-import { UserTimestampUtil } from '@app/utils/user-timestamp/user-timestamp.util';
+import { LoggingDataLayerInterface } from './interfaces/logging-data-layer.interface';
+import { UserTimestampUtil } from '../utils/user-timestamp/user-timestamp.util';
 
 /**
  * Generic logging class
@@ -9,6 +9,7 @@ import { UserTimestampUtil } from '@app/utils/user-timestamp/user-timestamp.util
  * @export
  * @class Logging
  */
+
 export class Logging {
   /**
    * Push generic manual logs to GTM

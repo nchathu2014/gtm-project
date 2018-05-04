@@ -1,4 +1,4 @@
-import { EventInterface } from 'app/interfaces/event.interface';
+import { EventInterface } from './event.interface';
 
 /**
  * Interface for logging Errors
@@ -7,6 +7,7 @@ import { EventInterface } from 'app/interfaces/event.interface';
  * @interface EventErrorInterface
  * @extends {EventInterface}
  */
+
 export interface EventErrorInterface extends EventInterface {
   error_code?: any;
   error_line_number?: number;

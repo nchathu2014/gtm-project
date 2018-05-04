@@ -1,5 +1,5 @@
-import { EventLogType } from '@app/enums/event-log.type';
-import { EventEnvType } from '@app/enums/event-env.type';
+import { EventLogType } from '../enums/event-log.type';
+import { EventEnvType } from '../enums/event-env.type';
 
 /**
  * Main interface for the data layer
@@ -7,6 +7,7 @@ import { EventEnvType } from '@app/enums/event-env.type';
  * @export
  * @interface EventInterface
  */
+
 export interface EventInterface {
   // name of the GTM event
   event: string;

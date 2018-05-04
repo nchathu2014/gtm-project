@@ -1,4 +1,5 @@
-import { EventInterface } from '@app/interfaces/event.interface';
+import { EventInterface } from '../../interfaces/event.interface';
+
 /**
  * Interface for manual pushing javascript errors
  *
@@ -6,6 +7,7 @@ import { EventInterface } from '@app/interfaces/event.interface';
  * @interface ErrorJsDataLayerInterface
  * @extends {EventInterface}
  */
+
 export interface ErrorJsDataLayerInterface extends EventInterface {
   error_js_message: any;
 }
