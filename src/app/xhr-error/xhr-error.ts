@@ -9,6 +9,13 @@ import { UserTimestampUtil } from '@app/utils/user-timestamp/user-timestamp.util
  * @class XhrError
  */
 export class XhrError {
+  /**
+   * Push manual xhr errors to GTM
+   *
+   * @static
+   * @param {XhrErrorDataLayerInterface} pushParams
+   * @memberof XhrError
+   */
   static xhrErrorLog(pushParams: XhrErrorDataLayerInterface): void {
     pushParams.event_log = EventLogEnum.ERROR;
     pushParams.event_timestamp = UserTimestampUtil();
