@@ -5,6 +5,78 @@
     <title>LA GTM Library Yo</title>
 </head>
 <body>
+<script>
+  window.dataLayer = window.dataLayer || [];
+</script>
+<h3>Javascript error</h3>
+<p>
 
+    <button type="button" onclick="triggerJSError()">Trigger Javascript error</button>
+</p>
+<hr/>
+<h3>Javascript Exception error log</h3>
+<p>
+
+    <button type="button" onclick="exceptionError()">Trigger Javascript Exception Error log</button>
+</p>
+<hr/>
+<h3>XHR error log</h3>
+<p>
+
+    <button type="button" onclick="xhrFail()">Trigger XHR Error log</button>
+</p>
+
+<script>
+  function triggerJSError() {
+    noVariable;
+  };
+
+  function exceptionError() {
+    try {
+      return triggerError;
+    } catch (e) {
+      lagtm.jsError({
+        event: 'JS_ERROR',
+        event_source: 'http://domain.com/some_url',
+        event_log: 'ERROR',
+        id_correlation: 'relate677',
+        id_section: 'some_section_id',
+        id_user: 'fffag235677',
+        error_js_message: e,
+      });
+    }
+  }
+
+  function xhrFail() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = () => {
+      if (this.readyState == 4 && this.status == 200) {
+        alert('done');
+      } else {
+        lagtm.xhrError({
+          event: 'XHR_ERROR',
+          event_source: 'http://domain.com/some_url',
+          event_log: 'ERROR',
+          id_correlation: 'relate677',
+          id_section: 'some_section_id',
+          id_user: 'fffag235677',
+          error_xhr_message: xhttp.response,
+          error_xhr_status_code: xhttp.status,
+          error_xhr_url: xhttp.responseURL,
+        });
+      }
+    };
+    xhttp.open('GET', 'filename', true);
+    xhttp.send();
+  }
+</script>
+<script>
+  lagtm.jsErrorWatch({
+    id_user: 'uuid123',
+    id_section: 'secID123',
+    id_correlation: 'corr1234',
+    id_assignment: 'assig123',
+  });
+</script>
 </body>
 </html>

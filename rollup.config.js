@@ -8,14 +8,16 @@ import browsersync from 'rollup-plugin-browsersync';
 const isEnvDev = process.env.NODE_ENV === 'development';
 
 export default {
-  input: './src/main.ts',
-  output: {
-    file: `dist/${pjson.name}.js`,
-    format: 'iife',
-    name: 'lagtm',
-    moduleName: 'lagtm',
-    sourcemap: isEnvDev ? 'inline' : false,
-  },
+  input: './src/index.ts',
+  output: [
+    {
+      file: `dist/${pjson.name}.js`,
+      format: 'iife',
+      name: 'lagtm',
+      moduleName: 'lagtm',
+      sourcemap: isEnvDev ? 'inline' : false,
+    },
+  ],
   plugins: [
     typescript({
       tsconfigDefaults: { compilerOptions: { declaration: true } },
