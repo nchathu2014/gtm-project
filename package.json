@@ -3,7 +3,7 @@
   "version": "0.0.2",
   "description": "logging and event pushing library for Google Tag Manager",
   "scripts": {
-    "start": "cross-env NODE_ENV=development rollup --config rollup.config.js --watch",
+    "start": "cross-env NODE_ENV=development rollup --config rollup.config.js --watch './src/**'",
     "build": "cross-env NODE_ENV=production rollup --config rollup.config.js",
     "lint": "tslint  --project tsconfig.json",
     "lint:format": "prettier --write \"**/*.ts\"",
@@ -45,6 +45,7 @@
     "rollup-plugin-browsersync": "^0.2.6",
     "rollup-plugin-clear": "^2.0.7",
     "rollup-plugin-fill-html": "^1.1.0",
+    "rollup-plugin-node-resolve": "^3.3.0",
     "rollup-plugin-typescript2": "^0.13.0",
     "rollup-plugin-uglify": "^3.0.0",
     "ts-jest": "^22.4.4",
