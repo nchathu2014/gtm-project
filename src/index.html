@@ -25,7 +25,12 @@
 
     <button type="button" onclick="xhrFail()">Trigger XHR Error log</button>
 </p>
+<hr/>
+<h3>Generic Logging</h3>
+<p>
 
+    <button type="button" onclick="genericLogging()">Trigger Generic Log info</button>
+</p>
 <script>
   function triggerJSError() {
     noVariable;
@@ -68,6 +73,15 @@
     };
     xhttp.open('GET', 'filename', true);
     xhttp.send();
+  }
+
+
+  function genericLogging() {
+    lagtm.logging({
+      event: 'LOGGING',
+      event_log: 'INFO',
+      log_message: 'This is only an informational message',
+    });
   }
 </script>
 <script>
