@@ -26,5 +26,5 @@ export class Logging {
 }
 
 export function log(userDefinedParams: LoggingDataLayerInterface): void {
-  (new Logging().pushLog(userDefinedParams));
+  new Logging().pushLog(userDefinedParams);
 }

@@ -25,6 +25,8 @@ export class XhrError {
   }
 }
 
-export function xhrErrorLog(userDefinedParams: XhrErrorDataLayerInterface): void {
-  (new XhrError().pushXhrError(userDefinedParams));
+export function xhrErrorLog(
+  userDefinedParams: XhrErrorDataLayerInterface,
+): void {
+  new XhrError().pushXhrError(userDefinedParams);
 }

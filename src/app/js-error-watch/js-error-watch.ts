@@ -34,5 +34,5 @@ class JsErrorWatch {
 }
 
 export function WatchJSErrors(userDefinedParams: WatchJsArgsInterface): void {
-  (new JsErrorWatch().pushWatchedJSError(userDefinedParams));
+  new JsErrorWatch().pushWatchedJSError(userDefinedParams);
 }
