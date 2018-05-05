@@ -20,7 +20,7 @@ export class Logging {
    * @memberof Logging
    */
   public pushLog(pushParams: LoggingDataLayerInterface): void {
-    pushParams.event_timestamp = UserTimestampUtil();
+    pushParams.event_timestamp = UserTimestampUtil(pushParams.event_timestamp);
     (window as any).dataLayer.push(pushParams);
   }
 }

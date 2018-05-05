@@ -20,7 +20,7 @@ export class XhrError {
    */
   public pushXhrError(pushParams: XhrErrorDataLayerInterface): void {
     pushParams.event_log = EventLogType.ERROR;
-    pushParams.event_timestamp = UserTimestampUtil();
+    pushParams.event_timestamp = UserTimestampUtil(pushParams.event_timestamp);
     (window as any).dataLayer.push(pushParams);
   }
 }

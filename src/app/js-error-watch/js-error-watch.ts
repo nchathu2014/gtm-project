@@ -22,7 +22,7 @@ class JsErrorWatch {
         error_js_watch_line: line,
         error_js_watch_message: msg.toString(),
         error_js_watch_stack: SanitizeStackErrorUtil(error.stack),
-        event_timestamp: UserTimestampUtil(),
+        event_timestamp: UserTimestampUtil(pushParams.event_timestamp),
         id_assignment: pushParams.id_assignment,
         id_correlation: pushParams.id_correlation,
         id_section: pushParams.id_section,

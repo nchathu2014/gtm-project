@@ -13,4 +13,10 @@ describe('Time stamp', () => {
 
     expect(isISO).toBeTruthy();
   });
+
+  it('should generate a unix timestamp if the user has supplied one', async () => {
+    const timestamp = UserTimestampUtil(Date.now());
+    console.log(timestamp);
+    expect(/[a-z]/i.test(timestamp)).not.toBeTruthy();
+  });
 });

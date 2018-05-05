@@ -8,7 +8,7 @@ class JsErrors {
    * @param {ErrorJsDataLayerInterface} pushParams
    */
   public pushJSError(pushParams: ErrorJsDataLayerInterface): void {
-    pushParams.event_timestamp = UserTimestampUtil();
+    pushParams.event_timestamp = UserTimestampUtil(pushParams.event_timestamp);
     (window as any).dataLayer.push(pushParams);
   }
 }

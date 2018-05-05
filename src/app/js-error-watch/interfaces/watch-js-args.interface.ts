@@ -16,4 +16,7 @@ export interface WatchJsArgsInterface {
 
   // user PI ID
   id_user?: string;
+
+  // optional user timestamp
+  event_timestamp?: string;
 }
