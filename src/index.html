@@ -41,7 +41,7 @@
     try {
       return triggerError;
     } catch (e) {
-      lagtm.jsError({
+      lagtm.logJSError({
         event: 'JS_ERROR',
         event_source: 'http://domain.com/some_url',
         event_log: 'ERROR',
@@ -59,7 +59,7 @@
       if (this.readyState == 4 && this.status == 200) {
         alert('done');
       } else {
-        lagtm.xhrError({
+        lagtm.logXhrError({
           event: 'XHR_ERROR',
           event_source: 'http://domain.com/some_url',
           event_log: 'ERROR',
@@ -78,7 +78,7 @@
 
 
   function genericLogging() {
-    lagtm.logging({
+    lagtm.log({
       event: 'LOGGING',
       event_log: 'INFO',
       log_message: 'This is only an informational message',
@@ -87,7 +87,7 @@
 </script>
 
 <script>
-  lagtm.jsErrorWatch({
+  lagtm.WatchJSErrors({
     id_user: 'uuid123',
     id_section: 'secID123',
     id_correlation: 'corr1234',

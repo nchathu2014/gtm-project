@@ -2,7 +2,7 @@
   "name": "la-gtm",
   "version": "0.0.2",
   "description": "logging and event pushing library for Google Tag Manager",
-  "main": "dist/la-gtm.module.js",
+  "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "scripts": {
     "start": "cross-env NODE_ENV=development rollup --config rollup.config.js --watch './src/**'",
