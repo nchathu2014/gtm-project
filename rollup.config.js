@@ -57,12 +57,12 @@ export default {
       open: false,
       notify: false,
     }) : false),
-    license({
+    (isEnvDev ? false : license({
       sourceMap: false,
       banner: {
         file: path.join(__dirname, 'license.md'),
         encoding: 'utf-8', // Default is utf-8
       },
-    }),
+    })),
   ],
 };
